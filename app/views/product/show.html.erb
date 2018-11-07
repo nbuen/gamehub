@@ -1,7 +1,3 @@
-<div class="product">
-	<p>
-		<b>Name: </b> <%= link_to @product.name, @product %> <br>
-		<b>Price: </b> <%= @product.price %> <br>
-		<b>Available: </b> <%= @product.quantity %>
-	</p>
-</div>
+<% render @product %>
+
+<%= link_to 'Products', root_path %>

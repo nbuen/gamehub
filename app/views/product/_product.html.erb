@@ -1,0 +1,14 @@
+<div class="product">
+	<p>
+		<b>Name: </b> <%= link_to product.name, product %>
+	</p>
+	<% if product.image.present? %>
+		<p>
+			<%= image_tag product.image %>
+		</p>
+	<% end %>
+	<p>		
+		<b>Price: </b> <%= product.price %> <br>
+		<b>Available: </b> <%= product.quantity %>
+	</p>
+</div>

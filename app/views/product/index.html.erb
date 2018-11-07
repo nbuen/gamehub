@@ -1,11 +1,3 @@
 <h1>GameHub</h1>
 
-<% @product_collection.each do |product| %>
-	<div class="product">
-		<p>
-			<b>Name: </b> <%= link_to product.name, product %> <br>
-			<b>Price: </b> <%= product.price %> <br>
-			<b>Available: </b> <%= product.quantity %>
-		</p>
-	</div>
-<% end %>
+<%= render @product_collection %>
