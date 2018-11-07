@@ -39,7 +39,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'activeadmin' # Admin Dashboard
 gem 'devise'      # User Auth
 gem 'carrierwave' # File Upload
-gem 'kaminari'
+gem "kaminari"
+gem "bootstrap-kaminari-views"
+gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap-sass', '3.2.0.2'
 
 
 group :development, :test do
