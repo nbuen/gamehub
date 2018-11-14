@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_09_181305) do
+ActiveRecord::Schema.define(version: 2018_11_14_162116) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 2018_11_09_181305) do
     t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "unit_price"
+    t.decimal "total_price"
     t.index ["product_id"], name: "index_cart_items_on_product_id"
     t.index ["shopping_cart_id"], name: "index_cart_items_on_shopping_cart_id"
   end
@@ -69,6 +71,9 @@ ActiveRecord::Schema.define(version: 2018_11_09_181305) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "subtotal"
+    t.decimal "tax"
+    t.decimal "shipping"
     t.index ["user_id"], name: "index_shopping_carts_on_user_id"
   end
 
@@ -78,6 +83,7 @@ ActiveRecord::Schema.define(version: 2018_11_09_181305) do
     t.datetime "updated_at", null: false
     t.string "encrypted_password"
     t.string "salt"
+    t.string "name"
   end
 
 end

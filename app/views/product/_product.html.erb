@@ -4,7 +4,7 @@
 	</p>
 	<% if product.image.present? %>
 		<p>
-			<%= image_tag product.image.url %>
+			<%= image_tag product.image.url, :size => "300x300" %>
 		</p>
 	<% end %>
 	<p>		

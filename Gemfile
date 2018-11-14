@@ -46,6 +46,7 @@ gem "bootstrap-kaminari-views"
 gem 'bootstrap', '~> 4.1.3'
 gem 'bootstrap-sass', '3.2.0.2'
 gem 'font-awesome-rails'
+gem 'simple_form'
 
 
 group :development, :test do
