@@ -32,6 +32,5 @@ class User < ApplicationRecord
 	#		self.salt = Digest::SHA2.hexdigest("#{Time.now.utc}--#{password}") if self.new_
 	#	end
 
-	validates :name, :username, :encrypted_password, presence: true
-	validates :username, uniqueness: true
+	
 end

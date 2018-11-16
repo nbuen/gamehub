@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :product, only: [:index, :show]
-  resources :cart_item
+  resources :cart_items
+  resource :carts, only: [:show]
+
   root to: 'product#index'
 
 end

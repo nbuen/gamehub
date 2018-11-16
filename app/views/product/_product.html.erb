@@ -7,9 +7,12 @@
 			<%= image_tag product.image.url, :size => "300x300" %>
 		</p>
 	<% end %>
-	<p>		
-		<b>Price: </b> <%= product.price %> <br>
-		<b>Available: </b> <%= product.quantity %>
-	</p>
-	
+	<%= form_for(@item, remote: true) do |f| %>
+		<%= f.hidden_field :product_id, value: product.id %>
+		<h5><%= product.price %></h5>
+		<div class="form-group">
+			<%= f.hidden_field :quantity, value: 1, min: 1, class: 'form-control' %>
+		</div>
+		<%= f.submit "Add to cart", class: 'btn btn-primary btm-sm' %>
+	<% end %>
 </div>

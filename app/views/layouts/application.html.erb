@@ -9,8 +9,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="bg-dark">   
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <body>   
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
       <%= link_to "GameHUB", root_path, :class => "navbar-brand" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -22,6 +22,12 @@
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item active cart">
+            <%= render 'layouts/cart', :class => "text-primary" %>
+          </li>
+        </ul>
+
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search">
           <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
@@ -29,16 +35,8 @@
       </div>
     </nav>
 
-    <div class="container col-md-12 col-lg-10 border shadow-sm p3 bg-light">
-      <div class="row">        
-        <%= yield %>
-      </div>
-      <div class="row mt-2 justify-content-center align-items-center">
-        <ul class="pagination">
-          <%= paginate @product_collection %> 
-        </ul>   
-      </div>   
-
+    <div class="container col-md-12 col-lg-10 border shadow-sm p-4 mt-3 bg-light">
+      <%= yield %>
     </div>
 
   </body>
