@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get '/' => 'users#index'
-  # post '/sessions' => 'sessions#create'
-  post '/users' => 'users#create'
-  # get '/dashboard' => 'product#index'
+  get '/users' => 'users#index'
+  post '/sessions' => 'sessions#create'
+  post '/users/create' => 'users#create'
+  get '/' => 'product#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
