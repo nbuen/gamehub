@@ -1,13 +1,20 @@
 <h1>Login</h1>
 
 <form action="/sessions" method="POST">
-	<% if flash[:login_errors] %>
-    	<div class="alert alert-danger" role="alert"><%= flash[:login_errors] %></div>
-    <% end %>
-	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-	<input type="email" name="login[username]" placeholder="email">
-	<input type="password" name="login[password_digest]" placeholder="password">
-	<input type="submit" name="submit" class="submit">
+	<div class="form-group">
+		<% if flash[:login_errors] %>
+    		<div class="alert alert-danger" role="alert"><%= flash[:login_errors] %></div>
+	    <% end %>
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<label for="exampleInputEmail1">Email address</label>
+		<input class="form-control" type="email" name="login[username]" placeholder="email">
+		<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+	</div>
+	<div class="form-group">
+		<label for="exampleInputPassword1">Password</label>
+		<input class="form-control" type="password" name="login[password_digest]" placeholder="password">		
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>	
 </form>
 <div>
 	<%= link_to "Not yet registered? Click Here!", users_register_path %>

@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 			redirect_to '/'
 		else
 			flash[:login_errors] = "Invalid Login"
-			redirect_to '/users'
+			redirect_to '/users/index'
 		end
 	end
 
