@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_16_151358) do
+ActiveRecord::Schema.define(version: 2018_11_16_154632) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -76,6 +76,6 @@ ActiveRecord::Schema.define(version: 2018_11_16_151358) do
   end
 
 # Could not dump table "users" because of following StandardError
-#   Unknown type 'digest' for column 'encrypted_password'
+#   Unknown type 'digest' for column 'password'
 
 end
