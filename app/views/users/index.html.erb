@@ -1,27 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Login and Registration</title>
-</head>
-<body>
-	<h1>Login</h1>
+<h1>Login</h1>
 
-	<form action="/sessions" method="POST">
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-		<input type="email" name="login[username]" placeholder="email">
-		<input type="password" name="login[password]" placeholder="password">
-		<input type="submit" name="submit" class="submit">
-	</form>
-
-	<h1>Registration</h1>
-
-	<form action="/users/create" method="POST">
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-		<input type="name" name="user[name]" placeholder="name">
-		<input type="email" name="user[username]" placeholder="email">
-		<input type="password" name="user[password]" placeholder="password">
-		<!-- <input type="password" name="user[encrypted_password_confirmation]" placeholder="password_confirmation"> -->
-		<input type="submit" name="submit" class="submit">
-	</form>
-</body>
-</html>
+<form action="/sessions" method="POST">
+	<% if flash[:login_errors] %>
+    	<div class="alert alert-danger" role="alert"><%= flash[:login_errors] %></div>
+    <% end %>
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<input type="email" name="login[username]" placeholder="email">
+	<input type="password" name="login[password_digest]" placeholder="password">
+	<input type="submit" name="submit" class="submit">
+</form>

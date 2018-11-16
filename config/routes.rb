@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/users' => 'users#index'
+  get '/register' => 'users#register'
   post '/sessions' => 'sessions#create'
   post '/users/create' => 'users#create'
   get '/' => 'product#index'
