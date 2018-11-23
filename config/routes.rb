@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :product, only: [:index, :show]
   resources :cart_items
+  resources :searches
   resource :carts, only: [:show]
 
   root to: 'product#index'

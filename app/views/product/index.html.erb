@@ -1,3 +1,11 @@
+<div class="container">
+  <%= form_tag product_index_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search" %>
+  <% end %>
+
+  <%= link_to "Advanced Search", new_search_path %>
+</div>
 <div class="row">
 	<div class="container">
 		<div class="row">

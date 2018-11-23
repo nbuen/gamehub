@@ -9,7 +9,8 @@ class UsersController < ApplicationController
 
 		if user.save
 			session[:user_id] = user.id
-			redirect_to '/'
+			flash[:success] = "Registration Successful!"
+			redirect_to '/users/register'
 		else
 			flash[:register_errors] = user.errors.full_messages
 			redirect_to '/users/register'
